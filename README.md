@@ -136,4 +136,5 @@ x
 3. Run `docker compose up --pull always -d --wait` to run an application
 4. Run `docker compose exec php bin/console doctrine:migrations:migrate` to run database migrations
 5. Open `https://localhost/onboarding` and [accept the auto-generated TLS certificate](https://stackoverflow.com/a/15076602/1352334)
-6. Run `docker compose down --remove-orphans -v` to stop containers after experience is over
+6. Run `docker compose exec php bin/phpunit` to execute unit tests
+7. Run `docker compose down --remove-orphans -v` to stop containers after experience is over

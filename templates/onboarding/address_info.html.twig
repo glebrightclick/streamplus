@@ -1,0 +1,33 @@
+{% extends 'onboarding/onboarding.html.twig' %}
+
+{% import 'macro/form.html.twig' as form_macros %}
+
+{% block content %}
+    <div class="container mt-5">
+        <h2 class="mb-4">{{ 'onboarding.address_info.header'|trans }}</h2>
+        {{ form_start(form, {'attr': {'class': 'row g-3'}}) }}
+            <div class="col-12">
+                {{ form_macros.text_input(form.address_line_1) }}
+            </div>
+            <div class="col-12">
+                {{ form_macros.text_input(form.address_line_2) }}
+            </div>
+            <div class="col-12">
+                {{ form_macros.text_input(form.address_city) }}
+            </div>
+            <div class="col-12">
+                {{ form_macros.text_input(form.address_state) }}
+            </div>
+            <div class="col-12">
+                {{ form_macros.text_input(form.address_postal_code) }}
+            </div>
+            <div class="col-12">
+                {{ form_macros.select(form.address_country) }}
+            </div>
+            <div class="col-12 d-flex justify-content-between">
+                <a href="{{ back_url }}" class="btn btn-link">{{ 'onboarding.button.back'|trans }}</a>
+                <button type="submit" class="btn btn-primary">{{ 'onboarding.button.next'|trans }}</button>
+            </div>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

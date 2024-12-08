@@ -1,0 +1,27 @@
+{% extends 'onboarding/onboarding.html.twig' %}
+
+{% import 'macro/form.html.twig' as form_macros %}
+
+{% block content %}
+    <div class="container mt-5">
+        <h2 class="mb-4">{{ 'onboarding.credit_card_info.header'|trans }}</h2>
+        {{ form_start(form, {'attr': {'class': 'row g-3'}}) }}
+            <div class="col-12">
+                {{ form_macros.text_input(form.credit_card_number) }}
+            </div>
+            <div class="col-5">
+                {{ form_macros.select(form.credit_card_expiration_month) }}
+            </div>
+            <div class="col-5">
+                {{ form_macros.select(form.credit_card_expiration_year) }}
+            </div>
+            <div class="col-2">
+                {{ form_macros.text_input(form.cvv) }}
+            </div>
+            <div class="col-12 d-flex justify-content-between">
+                <a href="{{ back_url }}" class="btn btn-link">{{ 'onboarding.button.back'|trans }}</a>
+                <button type="submit" class="btn btn-primary">{{ 'onboarding.button.next'|trans }}</button>
+            </div>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

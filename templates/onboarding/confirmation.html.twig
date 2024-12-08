@@ -1,0 +1,36 @@
+{% extends 'onboarding/onboarding.html.twig' %}
+
+{% block content %}
+    <div class="container mt-5">
+        <h2 class="mb-4">{{ 'onboarding.confirmation.header'|trans }}</h2>
+        <div class="card">
+            <div class="card-header">
+                <h5>{{ 'onboarding.confirmation.sub_header'|trans }}</h5>
+            </div>
+            <div class="card-body">
+                <div class="row g-3">
+                    <div class="col-md-12">
+                        <p><strong>{{ 'onboarding.user_info.name'|trans }}:</strong> {{ user.name }}</p>
+                        <p><strong>{{ 'onboarding.user_info.email'|trans }}:</strong> {{ user.email }}</p>
+                        <p><strong>{{ 'onboarding.user_info.phone'|trans }}:</strong> {{ user.phone }}</p>
+                        <p><strong>{{ 'onboarding.user_info.subscription'|trans }}:</strong> {{ activeSubscription.subscriptionType.name|trans }}</p>
+                        {% if creditCardInfo %}
+                            <p><strong>{{ 'onboarding.credit_card_info.credit_card'|trans }}:</strong> **** **** **** {{ creditCardInfo.creditCardNumber[-4:] }}</p>
+                        {% endif %}
+                        <p><strong>{{ 'onboarding.address_info.address'|trans }}:</strong> {{ addressInfo.addressLine1 }} {{ addressInfo.addressLine2 }}</p>
+                        <p><strong>{{ 'onboarding.address_info.city'|trans }}:</strong> {{ addressInfo.city }}, {{ addressInfo.state }} {{ addressInfo.postalCode }}</p>
+                        <p><strong>{{ 'onboarding.address_info.country'|trans }}:</strong> {{ addressInfo.country }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer text-end">
+                {{ form_start(form) }}
+                    <div class="d-flex justify-content-between">
+                        <a href="{{ back_url }}" class="btn btn-link">{{ 'onboarding.button.back'|trans }}</a>
+                        {{ form_widget(form.confirm, {'attr': {'class': 'btn btn-primary'}}) }}
+                    </div>
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,30 @@
+onboarding.user_info.header: 'User Information'
+onboarding.user_info.name: Name
+onboarding.user_info.email: Email
+onboarding.user_info.phone: Phone
+onboarding.user_info.subscription: Subscription
+onboarding.user_info.subscription_type: 'Subscription type'
+onboarding.address_info.header: 'Address Information'
+onboarding.address_info.address: Address
+onboarding.address_info.address_line_1: 'Address line 1'
+onboarding.address_info.address_line_2: 'Address line 2'
+onboarding.address_info.city: City
+onboarding.address_info.postal_code: 'Postal code'
+onboarding.address_info.state: State
+onboarding.address_info.country: Country
+onboarding.credit_card_info.header: 'Credit Card Information'
+onboarding.credit_card_info.credit_card: 'Credit card'
+onboarding.credit_card_info.credit_card_number: 'Credit card number'
+onboarding.credit_card_info.expiration_month: Month
+onboarding.credit_card_info.expiration_year: Year
+onboarding.credit_card_info.cvv: CVV
+onboarding.confirmation.header: Confirmation
+onboarding.confirmation.sub_header: Summary
+onboarding.complete.greetings: 'Onboarding completed, congrats, {name}!'
+onboarding.complete.personal_details: 'Personal Details'
+onboarding.complete.payment_details: 'Payment Details'
+onboarding.button.next: Next
+onboarding.button.back: Back
+onboarding.button.submit: Submit
+subscription.premium.title: Premium
+subscription.free.title: Free

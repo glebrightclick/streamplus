@@ -1,0 +1,27 @@
+{% macro text_input(field) %}
+    {{ form_label(field, null, {'label_attr': {'class': 'form-label'}}) }}
+    {% set widget_class = 'form-control' %}
+    {% if field.vars.errors|length > 0 %}
+        {% set widget_class = 'form-control is-invalid' %}
+    {% endif %}
+    {{ form_widget(field, {'attr': {'class': widget_class}}) }}
+    {% for error in field.vars.errors %}
+        <div class="invalid-feedback">
+            {{ error.message|trans }}
+        </div>
+    {% endfor %}
+{% endmacro %}
+
+{% macro select(field) %}
+    {{ form_label(field, null, {'label_attr': {'class': 'form-label'}})  }}
+    {% set widget_class = 'form-select' %}
+    {% if field.vars.errors|length > 0 %}
+        {% set widget_class = 'form-select is-invalid' %}
+    {% endif %}
+    {{ form_widget(field, {'attr': {'class': widget_class}}) }}
+    {% for error in field.vars.errors %}
+        <div class="invalid-feedback">
+            {{ error.message|trans }}
+        </div>
+    {% endfor %}
+{% endmacro %}

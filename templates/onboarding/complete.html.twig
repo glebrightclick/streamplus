@@ -1,0 +1,33 @@
+{% extends 'onboarding/onboarding.html.twig' %}
+
+{% block content %}
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-header">
+                <h5>{{ 'onboarding.complete.greetings'|trans({'{name}': user.name}) }}</h5>
+            </div>
+            <div class="card-body">
+                <h6>{{ 'onboarding.complete.personal_details'|trans }}</h6>
+                <ul class="list-group mb-3">
+                    <li class="list-group-item"><strong>{{ 'onboarding.user_info.email'|trans }}:</strong> {{ user.email }}</li>
+                    <li class="list-group-item"><strong>{{ 'onboarding.user_info.phone'|trans }}:</strong> {{ user.phone }}</li>
+                    <li class="list-group-item"><strong>{{ 'onboarding.user_info.subscription'|trans }}:</strong> {{ activeSubscription.subscriptionType.name|trans }}</li>
+                </ul>
+
+                <h6>{{ 'onboarding.address_info.address'|trans }}</h6>
+                <ul class="list-group mb-3">
+                    <li class="list-group-item"><strong>{{ 'onboarding.address_info.address'|trans }}:</strong> {{ addressInfo.addressLine1 }} {{ addressInfo.addressLine2 }}</li>
+                    <li class="list-group-item"><strong>{{ 'onboarding.address_info.city'|trans }}:</strong> {{ addressInfo.city }}, {{ addressInfo.state }} {{ addressInfo.postalCode }}</li>
+                    <li class="list-group-item"><strong>{{ 'onboarding.address_info.country'|trans }}:</strong> {{ addressInfo.country }}</li>
+                </ul>
+
+                {% if creditCardInfo %}
+                    <h6>{{ 'onboarding.complete.payment_details'|trans }}</h6>
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>{{ 'onboarding.credit_card_info.credit_card'|trans }}:</strong> **** **** **** {{ creditCardInfo.creditCardNumber[-4:] }}</li>
+                    </ul>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -127,11 +127,13 @@ x
 5. Frontend:
    1. Twig including special functions to work with form elements and custom macros
    2. Bootstrap 5 components (including forms and cards)
+6. All strings were added to translation files and ready for localization
 
 # Getting started
 
 1. If not already done, [install Docker Compose](https://docs.docker.com/compose/install/) (v2.10+)
 2. Run `docker compose build --no-cache` to build fresh images
 3. Run `docker compose up --pull always -d --wait` to run an application
-4. Open `https://localhost/onboarding` and [accept the auto-generated TLS certificate](https://stackoverflow.com/a/15076602/1352334)
-5. Run `docker compose down --remove-orphans` to stop containers after experience is over :)
+4. Run `docker compose exec php bin/console doctrine:migrations:migrate` to run database migrations
+5. Open `https://localhost/onboarding` and [accept the auto-generated TLS certificate](https://stackoverflow.com/a/15076602/1352334)
+6. Run `docker compose down --remove-orphans -v` to stop containers after experience is over

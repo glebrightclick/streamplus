@@ -10,9 +10,9 @@ class NotEmptyValidator extends ConstraintValidator
     /**
      * @param NotEmpty $constraint
      */
-    public function validate($value, Constraint $constraint)
+    public function validate($value, Constraint $constraint): void
     {
-        if (empty($value)) {
+        if (empty(trim($value))) {
             $this->context->buildViolation($constraint->message)->addViolation();
         }
     }

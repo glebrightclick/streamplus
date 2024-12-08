@@ -30,7 +30,7 @@ class AddressInfoType extends AbstractType
         $this->validator = $validator;
     }
 
-    public function buildForm(FormBuilderInterface $builder, array $options)
+    public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
             ->add(

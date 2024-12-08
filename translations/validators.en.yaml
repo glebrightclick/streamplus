@@ -1,0 +1,29 @@
+validator:
+    country_specific_postal_code:
+        message:
+            general: 'Postal code is invalid for the selected country.'
+            us: 'US postal code must be exactly 5 digits.'
+            ca: 'Validate Canadian postal codes (e.g., A1A 1A1)'
+            uk: 'UK postal code is invalid.'
+            de: 'German postal code must be exactly 5 digits.'
+    country_specific_state:
+        message:
+            general: ''
+            us: 'State cannot be blank for US addresses.'
+            ca: 'Province cannot be blank for Canadian addresses.'
+    not_empty:
+        message:
+            general: 'Please fill out this field.'
+    unique_email:
+        message:
+            general: 'Email "{value}" is already in use.'
+    credit_card_number:
+        error:
+            invalid_number: 'Invalid credit card number.'
+    expiration_month:
+        error:
+            invalid_date: 'The expiration date must be valid.'
+    cvv:
+        error:
+            three_digits: 'CVV must be exactly 3 digits.'
+            only_digits: 'CVV must contain only digits.'
